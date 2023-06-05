@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="short-url-generator:war">
+    <output-path>$PROJECT_DIR$/short-url-generator/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>short-url-generator</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="short-url-generator-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="short-url-generator:war exploded" />
+    </root>
+  </artifact>
+</component>

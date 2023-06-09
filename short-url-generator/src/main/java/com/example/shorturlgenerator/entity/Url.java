@@ -38,4 +38,21 @@ public class Url {
     public Long getId() {
         return id;
     }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+
+        Url url = (Url) o;
+
+        return id == url.id && fullUrl.equals(url.fullUrl);
+    }
+
+    @Override
+    public int hashCode() {
+        return fullUrl.hashCode();
+    }
 }

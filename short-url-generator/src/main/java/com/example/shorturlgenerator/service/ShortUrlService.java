@@ -16,6 +16,7 @@ public class ShortUrlService {
     public static final String BASE_URL = "http://localhost:8080/";
 
     public static final int RADIX = 35;
+
     private final ShortUrlRepo shortUrlRepo;
 
     private final Cache<String, String> cache = Caffeine.newBuilder()
@@ -41,8 +42,10 @@ public class ShortUrlService {
         });
     }
 
+    //??? а оно нам надо
     public Optional<String> findFullUrl(final String encoded) {
         long id = Long.parseLong(encoded, RADIX);
-        return shortUrlRepo.findById(id).get().getFullUrl().describeConstable();
+        var str = shortUrlRepo.findById(id).get().getFullUrl();
+        return str.describeConstable();
     }
 }

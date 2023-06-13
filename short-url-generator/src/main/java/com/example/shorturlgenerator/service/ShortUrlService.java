@@ -42,10 +42,8 @@ public class ShortUrlService {
         });
     }
 
-    //??? а оно нам надо
     public Optional<String> findFullUrl(final String encoded) {
         long id = Long.parseLong(encoded, RADIX);
-        var str = shortUrlRepo.findById(id).get().getFullUrl();
-        return str.describeConstable();
+        return shortUrlRepo.findById(id).map(Url::getFullUrl);
     }
 }

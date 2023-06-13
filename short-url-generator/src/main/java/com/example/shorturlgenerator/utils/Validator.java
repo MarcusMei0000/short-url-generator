@@ -10,8 +10,8 @@ public class Validator {
     private static final String REG_EXP = "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w \\.-]*)*\\/?$";
     private static final Pattern pattern = Pattern.compile(REG_EXP);
     public boolean isValidUrl(final String url) {
-        Matcher matchar = pattern.matcher(url);
-        return matchar.matches();
+        Matcher matcher = pattern.matcher(url);
+        return matcher.matches();
     }
 
 }
